@@ -2,23 +2,15 @@
 	<Import Project="$(SolutionDir)MainSlnCommon.props" />
 	<PropertyGroup>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<TargetFramework>net48</TargetFramework>
+		<TargetFramework>netstandard2.0</TargetFramework><!-- some NuGet packages don't target .NET Core, more work will be required —yoshi -->
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
-		<Reference Include="Microsoft.CSharp" /><!-- for (extra?) dynamic type support -->
-		<Reference Include="System.IO.Compression" />
-	</ItemGroup>
-	<ItemGroup>
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" PrivateAssets="All" /><!-- for (extra?) dynamic type support -->
 		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" PrivateAssets="All" />
 		<PackageReference Include="SharpCompress" Version="0.24.0" PrivateAssets="All" />
 		<PackageReference Include="SharpZipLib" Version="1.1.0" PrivateAssets="All" />
-	</ItemGroup>
-	<ItemGroup>
 		<ProjectReference Include="$(SolutionDir)BizHawk.Emulation.Cores/BizHawk.Emulation.Cores.csproj" />
 		<ProjectReference Include="$(SolutionDir)Bizware/BizHawk.Bizware.BizwareGL/BizHawk.Bizware.BizwareGL.csproj" />
-	</ItemGroup>
-	<ItemGroup>
 		<Compile Include="$(SolutionDir)Version/svnrev.cs" />
 		<Compile Include="$(SolutionDir)Version/VersionInfo.cs" />
 	</ItemGroup>
