@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="$(SolutionDir)MainSlnCommon.props" />
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
+		<Reference Include="System.Data.SQLite, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64"
+			HintPath="$(SolutionDir)References/x64/SQLite/System.Data.SQLite.dll"
+			SpecificVersion="False" />
+		<PackageReference Include="Ionic.Zip" Version="1.9.1.8" PrivateAssets="All" />
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" PrivateAssets="All" />
+		<Reference Include="NLua"
+			HintPath="$(SolutionDir)output/dll/nlua/NLua.dll"
+			Private="False" />
+		<ProjectReference Include="$(SolutionDir)BizHawk.Client.Common/BizHawk.Client.Common.csproj" />
+	</ItemGroup>
+	<Import Project="$(SolutionDir)NamespaceAliasHack.targets" />
+</Project>
